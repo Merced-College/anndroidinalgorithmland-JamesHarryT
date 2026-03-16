@@ -125,3 +125,25 @@ Step 4 questions:
 	I verified the sorting by checking the game screen where the top 20 scores appeared in the correct order.
 	I also printed the scores to the terminal and confirmed the entire list list was sorted from highest to
 	lowest.The highest score I found was 300 and the lowest score was -60.
+	
+## Searching questions
+
+1. How does binary search work in your own words?
+
+	The binary search create low and high bounds for the beginning and end of the list. It finds the middle of these bounds
+	and checks whether the target is greater than or less than the middle value. Then it searches either left or right
+	and repeats this process until it finds the target value or determines it is not in the list.
+
+2. Why must the data be sorted before binary search can be used?
+	
+	The data must be sorted because binary search relies on the numbers being in order. This allows the algorithm to
+	determine whether to search the left or ride side of the list.
+
+3. What variables did you use for low, high, and mid?
+
+	I used int variables for low, high, and mid.
+
+4. What happens when the score is not found?
+
+	When the score is not found, the function binarySearchByScore() returns -1. The program then displays a message
+	on the bottom left of the menu saying that the score was not found.

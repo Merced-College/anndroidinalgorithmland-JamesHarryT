@@ -60,8 +60,33 @@ public class LeaderboardAlgorithms {
      *
      * @return index of the matching entry, or -1 if not found
      */
-    public static int binarySearchByUsername(ArrayList<ScoreEntry> list, String username) {
-        // TODO
+    public static int binarySearchByScore(ArrayList<ScoreEntry> scores, int target_score) {
+    	// flipped version of binary search to work with descending order of sorted scores.
+    	int low = 0;
+    	int high = scores.size() - 1;
+    	
+    	while (low <= high) {
+    		// set the middle index to the middle of the low and high bounds
+    		int mid = low + (high - low) / 2;
+    		
+    		// if target was found return the index it was found at
+    		if (scores.get(mid).getScore() == target_score) {
+    			return mid;
+    		}
+    		
+    		// because descending, if mid is less than the target, then ignore the right side and search the left
+    		if (scores.get(mid).getScore() < target_score) {
+    			high = mid - 1;
+    		}
+    		
+    		// because descending, otherwise mid is more than the target, 
+    		// so ignore the left side and search the right
+    		else {
+    			low = mid + 1;
+    		}
+    	}
+    	
+    	// target wasn't found so return -1
         return -1;
     }
 }

@@ -41,7 +41,7 @@ public class LeaderboardPanel extends JPanel {
         top.add(loadBtn);
         top.add(top20Btn);
         top.add(sortNameBtn);
-        top.add(new JLabel("Username:"));
+        top.add(new JLabel("Score:"));
         top.add(searchField);
         top.add(searchBtn);
         top.add(backBtn);
@@ -99,19 +99,29 @@ public class LeaderboardPanel extends JPanel {
         searchBtn.addActionListener(e -> {
             if (allEntries.isEmpty()) { status("Load first."); return; }
 
-            String target = searchField.getText().trim();
-            if (target.isEmpty()) { status("Enter a username."); return; }
-
+            String text = searchField.getText().trim();
+            if (text.isEmpty()) { status("Enter a score."); return; }
+            
+            //changes text to an integer for binary search and ensures that the user entered a number
+            int target;
+            try {
+            	target = Integer.parseInt(text);
+            }
+            catch (NumberFormatException ex) {
+            	status("Score must be a number.");
+            	return;
+            }
+            
             ArrayList<ScoreEntry> copy = new ArrayList<>(allEntries);
 
             // Ensure sorted before binary search
-            LeaderboardAlgorithms.sortByUsernameAscending(copy);
+            LeaderboardAlgorithms.sortByScoreDescending(copy);
 
-            int idx = LeaderboardAlgorithms.binarySearchByUsername(copy, target);
+            int idx = LeaderboardAlgorithms.binarySearchByScore(copy, target);
 
             if (idx >= 0) {
                 tableModel.setData(List.of(copy.get(idx)));
-                status("Found user: " + target + " (binary search index " + idx + ")");
+                status("Found score: " + target + " (binary search index " + idx + ")");
             } else {
                 tableModel.setData(List.of());
                 status("Not found: " + target + " (binary search returned -1)");
