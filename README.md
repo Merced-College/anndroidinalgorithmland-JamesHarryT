@@ -91,3 +91,37 @@ Step 5 questions:
 	It would make the most sense to implement sorting of scores within the LeaderboardAlgorithms.java class. This
 	class is where algorithms for the leaderboard should be and the sorting is a great algorithm to fit in here.
 	
+## Sorting, Part 3 questions:
+
+Step 1 questions:
+
+1. In which class did you add the sorting code?:
+
+	I decided to add the sorting code in the LeaderboardAlgorithms.java class.
+
+2. Why did you choose that location?
+
+	I chose this location because it keeps sorting and searching algorithms in a class specifically
+	designed for algorithms.
+
+3. What data structure is being sorted?:
+
+	The data structure being sorted is an ArrayList with ScoreEntry objects.
+	
+Step 4 questions:
+
+1. Which sorting algorithm did you choose?
+
+	I chose to use selection sort for sorting scores highest to lowest.
+
+2. How does your algorithm work in your own words?
+
+	My algorithm works by selecting a value in the ArrayList and then comparing all remaining values to find
+	the largest score. Once the largest score is found, then it is swapped with the value at the current position.
+	The algorithm then moves to the next position and repeats the process until the entire list is sorted.
+
+3. How did you verify that your sort was correct?
+
+	I verified the sorting by checking the game screen where the top 20 scores appeared in the correct order.
+	I also printed the scores to the terminal and confirmed the entire list list was sorted from highest to
+	lowest.The highest score I found was 300 and the lowest score was -60.

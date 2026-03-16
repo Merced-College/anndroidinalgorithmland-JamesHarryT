@@ -69,6 +69,21 @@ public class LeaderboardPanel extends JPanel {
 
             showRows(copy, 20);
             status("Showing Top 20 by score (requires sortByScoreDescending).");
+            
+            System.out.println("Sorted Leaderboard (Highest to Lowest): ");
+            
+            // this doesn't really work in the console because the size of the data. Only the last ones seem to show
+            for (ScoreEntry entry: copy) {
+            	System.out.println(entry.getUsername() + ": " + entry.getScore());
+            }
+            
+            /* use this for only printing the top 20
+            for (int i = 0; i < 20; i++) {
+            	ScoreEntry entry = copy.get(i);
+            	System.out.println((i + 1) + ". " + entry.getUsername() + " - " + entry.getScore());
+            }
+            */
+            
         });
 
         sortNameBtn.addActionListener(e -> {
@@ -78,6 +93,7 @@ public class LeaderboardPanel extends JPanel {
             LeaderboardAlgorithms.sortByUsernameAscending(copy);
             showRows(copy, 50);
             status("Showing first 50 sorted by username (requires sortByUsernameAscending).");
+            
         });
 
         searchBtn.addActionListener(e -> {
