@@ -3,9 +3,10 @@ package level1;
 import java.util.ArrayList;
 
 /**
- * STUDENT TODO FILE
- *
- * You will implement sorting and binary search for the Leaderboard Terminal.
+ * Names: Harrison Tinley, Rito Murillo, Parminder Singh
+ * Date: 3/30/26
+ * This class has the algorithms we use in the program to sort by score and search for the score from the csv file.
+ * It uses selection sort for sorting scores descending. It also uses binary search for searching the score of a player.
  */
 public class LeaderboardAlgorithms {
 
