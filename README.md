@@ -2,6 +2,7 @@
 # AnnDroidInAlgotihmLand
 
 Harrison Tinley, Rito Murillo, Parminder Singh
+
 Last Commit Date: 3/30/2026
 
 This project is a game where you have to click a white rabbit in time to get points. There is a leaderboard with player stats to see as well.
